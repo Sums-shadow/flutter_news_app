@@ -3,7 +3,7 @@ import 'package:provider/provider.dart' hide ErrorBuilder;
 
 import '../providers/providers.dart';
 import '../widgets/widgets.dart';
-import '../models/models.dart';
+import '../states/states.dart';
 
 class TopHeadlinesPage extends StatefulWidget {
   const TopHeadlinesPage({Key? key}) : super(key: key);
@@ -20,8 +20,7 @@ class _TopHeadlinesPageState extends State<TopHeadlinesPage> with AutomaticKeepA
     return Selector<NewsProvider, CategoryState>(
       selector: (_, model) => model.topHeadlines,
       builder: (_, topHeadlines, __) {
-        /// El loading puede manejarse con el arreglo vacio
-        // if(topHeadlines.fetching) return const Center(child: CircularProgressIndicator());
+        if(topHeadlines.fetching) return const Center(child: CircularProgressIndicator());
 
         if(topHeadlines.error != null) {
           return ErrorBuilder(

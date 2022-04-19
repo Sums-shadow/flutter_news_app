@@ -29,7 +29,7 @@ class NewsItem extends StatelessWidget {
           )
         ),
 
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
 
         /// Title
         Padding(
@@ -37,7 +37,7 @@ class NewsItem extends StatelessWidget {
           child: Text('${article.title} ', style: _titleStyle)
         ),
 
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
 
         /// Image
         SizedBox(
@@ -46,7 +46,7 @@ class NewsItem extends StatelessWidget {
           child: _ArticleImage(article.urlToImage)
         ),
 
-        SizedBox(height: 8),
+        const SizedBox(height: 8),
         
         /// Description
         Padding(
@@ -54,7 +54,7 @@ class NewsItem extends StatelessWidget {
           child: article.description == null ? const Text('No Description') : Text('${article.description}')
         ),
         
-        SizedBox(height: 7),
+        const SizedBox(height: 7),
 
         /// Actions
         const _ArticleActions(),
@@ -73,13 +73,14 @@ class _ArticleImage extends StatelessWidget {
     return ClipRRect(
       borderRadius: const BorderRadius.only(topLeft: Radius.circular(50), bottomRight: Radius.circular(50)),
       child: urlImage == null || !urlImage!.contains('http')
-        ? Image(
-          image: const AssetImage('assets/no-image.png'),
+        ? const Image(
+          image: AssetImage('assets/no-image.png'),
           fit: BoxFit.cover,
         ) : 
         FadeInImage(
           placeholder: const AssetImage('assets/giphy.gif'), 
-          image: NetworkImage(urlImage!), 
+          imageErrorBuilder: (_, __, ___) => Image.asset('assets/no-image.png'),
+          image: NetworkImage(urlImage!   ), 
           fit: BoxFit.cover
         )
     );
@@ -104,7 +105,7 @@ class _ArticleActions extends StatelessWidget {
           ),
         ),
 
-        SizedBox(width: 10),
+        const SizedBox(width: 10),
         
         ElevatedButton(
           onPressed: () {}, 

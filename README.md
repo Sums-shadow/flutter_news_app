@@ -1,16 +1,43 @@
-# news_app
+# News App
 
-A new Flutter project.
+with this app you can stay informed of the latest popular and other categories news 
 
-## Getting Started
+Includes:
 
-This project is a starting point for a Flutter application.
+* Api Consumption Service (News Api)
+* PageView and TabView Nested
+* Provider as State Management with States Logic (equitable), filtering rebuild tricks and good practices.
+* Provider Array States syncing with TabView, and Selector.
+* Infinite Scroll with debouncer for new pages requests.
+* State and Scroll Position Persistence with AutomaticKeepAliveClientMixin
 
-A few resources to get you started if this is your first Flutter project:
+Demo: 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<table>
+<thead>
+	<tr>
+		<th>Demo 1</th>
+		<th>Demo 2</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td><img src="https://res.cloudinary.com/dwzr9lray/image/upload/v1650328362/flutter_repos/News%20App/news_app_1.gif"></td>
+		<td><img src="https://res.cloudinary.com/dwzr9lray/image/upload/v1650328362/flutter_repos/News%20App/news_app_2.gif"></td>
+	</tr>
+</tbody>
+</table>
+<table>
+<thead>
+	<tr>
+		<th>Demo 3</th>
+		<th>Demo 4</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<td><img src="https://res.cloudinary.com/dwzr9lray/image/upload/v1650328362/flutter_repos/News%20App/news_app_3.gif"></td>
+		<td><img src="https://res.cloudinary.com/dwzr9lray/image/upload/v1650328362/flutter_repos/News%20App/news_app_4.gif"></td>
+	</tr>
+</tbody>
+</table>

@@ -5,8 +5,8 @@ import '../pages/pages.dart';
 import '../widgets/widgets.dart';
 import '../providers/providers.dart';
 
-class TabsPage extends StatelessWidget {
-  const TabsPage({Key? key}) : super(key: key);
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

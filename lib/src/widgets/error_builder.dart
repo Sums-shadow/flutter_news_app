@@ -18,7 +18,7 @@ class ErrorBuilder extends StatelessWidget {
         ElevatedButton(
           onPressed: onTap, 
           style: ElevatedButton.styleFrom(),
-          child: Text('Intentar de nuevo')
+          child: const Text('Intentar de nuevo')
         )
       ],
     );

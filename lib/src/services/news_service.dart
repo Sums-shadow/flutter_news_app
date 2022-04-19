@@ -1,9 +1,10 @@
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 
 import '../models/models.dart';
 
 class NewsService {
-  final apiKey = '815f41f756c441f7bc4764a1a01b3aaa';
+  final apiKey = dotenv.env['NEWS_API_KEY']!;
   final urlBase = 'newsapi.org';
 
   Future<HeadlinesResponse> fetchTopHeadlines(int page) async {
@@ -29,9 +30,9 @@ class NewsService {
     });
 
     final response = await http.get(url);
-
+      
     final headlinesResponse = HeadlinesResponse.fromJson(response.body);
-
+      
     return headlinesResponse;
   }
 }

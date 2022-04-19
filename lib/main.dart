@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:provider/provider.dart';
 
 import 'src/providers/providers.dart';
@@ -6,6 +7,8 @@ import 'src/services/services.dart';
 import 'src/pages/pages.dart';
  
 void main() async {
+  await dotenv.load();
+
   runApp(const MyApp());
 }
 
@@ -18,16 +21,14 @@ class MyApp extends StatelessWidget {
       providers: [
         Provider(create: (_) => NewsService()),
         ChangeNotifierProvider(create: (_) => UIProvider()),
-        ChangeNotifierProvider(
-          create: (context) => NewsProvider(context.read<NewsService>())
-        ),
+        ChangeNotifierProvider(create: (context) => NewsProvider(context.read<NewsService>()))
       ],
       child: MaterialApp(
         title: 'Material App',
         /// Elimina el glow del scroll al llegar al limite (ripple de color)
         scrollBehavior: const _MyCustomScrollBehavior(),
         debugShowCheckedModeBanner: false,
-        home: const TabsPage(),
+        home: const HomePage(),
         theme: ThemeData.dark().copyWith(
           colorScheme: const ColorScheme.dark().copyWith(
             primary: Colors.red,

@@ -5,7 +5,7 @@ class CustomTabIndicator extends Decoration {
   final double separation;
   final double radius;
 
-  CustomTabIndicator({this.separation = 0.0, this.radius = 24.0});
+  const CustomTabIndicator({this.separation = 0.0, this.radius = 24.0});
 
   @override
   BoxPainter createBoxPainter([VoidCallback? onChanged]) {
