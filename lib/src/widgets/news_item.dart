@@ -79,7 +79,11 @@ class _ArticleImage extends StatelessWidget {
         ) : 
         FadeInImage(
           placeholder: const AssetImage('assets/giphy.gif'), 
-          imageErrorBuilder: (_, __, ___) => Image.asset('assets/no-image.png'),
+          imageErrorBuilder: (_, __, ___) => Image.asset(
+            'assets/no-image.png',
+            width: double.infinity,
+            fit: BoxFit.cover,
+          ),
           image: NetworkImage(urlImage!   ), 
           fit: BoxFit.cover
         )
